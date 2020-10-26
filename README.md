@@ -1,7 +1,7 @@
 # libgastosluxu
 Biblioteca para uso nas aulas do Python Pro
 
-[![Build Status](https://travis-ci.com/luxu/bbscraper.svg?branch=master)](https://travis-ci.com/luxu/bbscraper)
+[![Build Status](https://travis-ci.com/luxu/bbscraper.svg?branch=main)](https://travis-ci.com/luxu/bbscraper)
 
 Para instalar:
 ```console
