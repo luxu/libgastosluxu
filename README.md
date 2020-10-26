@@ -6,5 +6,4 @@ Para instalar:
 python -m venv .venv
 .\.venv\Scripts\activate
 pip install -r requeriments
-
 ```
