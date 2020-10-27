@@ -36,7 +36,7 @@ jobs:
         pipenv run flake8 .
     - name: Test with pytest
       run: |
-        pipenv run pytest pythonpro --cov=pythonpro
+        pipenv run pytest libgastosluxu --cov=libgastosluxu
     - name: Posting Coverage
       env:
         CODECOV_TOKEN: "edb2f697-1da4-4a56-93c2-e0a53d67af0c"
