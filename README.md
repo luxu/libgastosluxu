@@ -1,5 +1,6 @@
 # libgastosluxu
-Biblioteca para uso nas aulas do Python Pro
+
+Módulo para exemplificar construção de projetos Python no curso PyTools
 
 [![Build Status](https://travis-ci.com/luxu/libgastosluxu.svg?branch=main)](https://travis-ci.com/luxu/libgastosluxu)
 [![Updates](https://pyup.io/repos/github/luxu/libgastosluxu/shield.svg)](https://pyup.io/repos/github/luxu/libgastosluxu/)
