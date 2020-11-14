@@ -1,6 +1,6 @@
 import pytest
 
-from libgastosluxu.spam.spam.test_enviador_de_email import Enviador, EmailInvalido
+from libgastosluxu.spam.enviador_de_email import Enviador, EmailInvalido
 
 
 def test_criar_enviador_de_email():
