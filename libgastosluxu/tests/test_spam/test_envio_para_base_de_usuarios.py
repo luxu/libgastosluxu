@@ -1,4 +1,5 @@
 import pytest
+from unittest.mock import Mock
 
 from libgastosluxu.spam.enviador_de_email import Enviador
 from libgastosluxu.spam.main import EnviadorDeSpam
@@ -20,14 +21,14 @@ from libgastosluxu.spam.modelos import Usuario
 def test_qde_de_spam(sessao, usuarios):
     for usuario in usuarios:
         sessao.salvar(usuario)
-    enviador = EnviadorMock()
+    enviador = Mock()
     enviador_de_spam = EnviadorDeSpam(sessao, enviador)
     enviador_de_spam.enviar_emails(
         'contato@luxu.com.br',
         'Curso Python Pro',
         'Confira os módulos fantásticos'
     )
-    assert len(usuarios) == enviador.qtd_email_enviados
+    assert len(usuarios) == enviador.enviar.call_count
 
 
 class EnviadorMock(Enviador):
@@ -45,14 +46,14 @@ class EnviadorMock(Enviador):
 def test_parametros_de_spam(sessao):
     usuario = Usuario(nome='Luciano', email='contato@luxu.com.br')
     sessao.salvar(usuario)
-    enviador = EnviadorMock()
+    enviador = Mock()
     enviador_de_spam = EnviadorDeSpam(sessao, enviador)
     enviador_de_spam.enviar_emails(
         'publicarnowordpress@luxu.com.br',
         'Curso Python Pro',
         'Confira os módulos fantásticos'
     )
-    assert enviador.parametros_de_envio == (
+    enviador.enviar.assert_called_once_with(
         'publicarnowordpress@luxu.com.br',
         'contato@luxu.com.br',
         'Curso Python Pro',
